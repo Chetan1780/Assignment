@@ -1,0 +1,15 @@
+// User function Template for Java - GFG FORMAT
+class Solution {
+    static String armstrongNumber(int n) {
+        // code here
+        int len = (int)Math.ceil(Math.log10(n+1));
+        int number = 0;
+        int val = n;
+        while(val>0){
+            number = number + (int)Math.pow(val%10,len);
+            val/=10;
+        }
+        if(number==n) return "true";
+        else return "false";
+    }
+}
