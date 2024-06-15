@@ -1,0 +1,29 @@
+import java.util.Scanner;
+
+public class Main {
+
+    public static void find(int n){
+        int x=0,y=0,z=0;
+        x = n/3;
+        if(x%3==0) x++;
+        for(int i=x+1;i<n;i++){
+            if(i%3!=0){
+                int temp = n-(x+i);
+                if(temp>0 && temp%3!=0 && i!=temp && x!=temp){
+                    System.out.println("Yes");
+                    System.out.println(x+" " + i+" "+ temp);
+                    return;
+                }
+            }
+        }
+        System.out.println("No");
+    }
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int t = sc.nextInt();
+        while (t-->0) {
+            int n = sc.nextInt();
+            find(n);
+        }
+    }    
+}
