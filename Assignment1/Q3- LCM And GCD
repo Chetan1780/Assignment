@@ -1,0 +1,15 @@
+// GFG FORMAT 
+class Solution {
+    
+    public static long gcd(long a,long b){
+        if(a==0) return b;
+        return gcd(b%a,a);
+    }
+    
+    static Long[] lcmAndGcd(Long A , Long B) {
+        // code here
+        long gcd = gcd(A,B);
+        long lcm = (A*B)/gcd;
+        return new Long[]{lcm,gcd};
+    }
+};
