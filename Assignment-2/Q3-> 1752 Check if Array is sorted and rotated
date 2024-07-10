@@ -1,0 +1,13 @@
+class Solution {
+    public boolean check(int[] nums) {
+        int n = nums.length;
+        int cnt = 0;
+        int i = 0;
+        while(i<nums.length-1){
+            if(nums[i]>nums[i+1]) cnt++;
+            i++;
+        }
+        if(nums[nums.length-1]>nums[0]) cnt++;
+        return cnt<=1;
+    }
+}
