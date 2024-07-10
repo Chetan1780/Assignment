@@ -1,0 +1,15 @@
+import java.util.Scanner;
+public class Main
+{
+    private static Character firstUpperCase(String s,int i){
+        if(i==s.length()) return null;
+        if(Character.isUpperCase(s.charAt(i))) return s.charAt(i);
+        return firstUpperCase(s,i+1);
+    }    
+    
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		String s = sc.next();
+		System.out.println(firstUpperCase(s,0));
+	}
+}
