@@ -1,1 +1,22 @@
-
+class Solution {
+    public int thirdMax(int[] nums) {
+        if(nums.length==1) return nums[0];
+        else if(nums.length==2) return nums[1]>nums[0]?nums[1]:nums[0];
+        long first = Long.MIN_VALUE;
+        long second = Long.MIN_VALUE;
+        long third = Long.MIN_VALUE;
+        for(int i=0;i<nums.length;i++){
+            if(nums[i]>third){
+                first = second;
+                second = third;
+                third = nums[i];
+            } else if(third>nums[i] && nums[i]>second){
+                first = second;
+                second = nums[i];
+            } else if(second>nums[i] && first<nums[i]){
+                first = nums[i];
+            }
+        }
+        return first!=Long.MIN_VALUE ?(int)first:(int)third;
+    }
+}
