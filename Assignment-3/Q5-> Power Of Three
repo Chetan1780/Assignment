@@ -1,0 +1,9 @@
+class Solution {
+    static int val = 1_162_261_467;
+    public boolean isPowerOfThree(int n) {
+        return n>0 && val%n==0;
+        // if(n==0) return false;
+        // if(n==1) return true;
+        // return isPowerOfThree(n/3) && n%3==0;
+    }
+}
